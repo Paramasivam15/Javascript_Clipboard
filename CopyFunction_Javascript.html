@@ -1,0 +1,67 @@
+
+<html>
+
+
+<script type="text/javascript">
+function CopyClipboardFunction() {
+  var copyText = document.getElementById("myInput");
+
+ 
+ document.getElementById("lblclipText").innerHTML =copyText.value.replace(/(?:\r\n|\r|\n)/g, '<br />');
+
+  document.getElementById("txtcontent").value = copyText.value.replace(/(?:\r\n|\r|\n)/g, ';');
+
+ var copyfinalText = document.getElementById("txtcontent");
+ copyfinalText.select();
+ document.execCommand("Copy");
+  alert("Copied the text: " + copyfinalText.value);
+
+}
+</script>
+
+
+<body>
+
+<Table width="100%" >
+
+<tr>
+<td>
+<button onclick="CopyClipboardFunction()">Copy Clipboard</button>
+</td>
+<td >
+
+<textarea id="myInput" placeholder="Enter your inputs" style="overflow:auto;resize:none" ></textarea>
+
+</td>
+
+</tr>
+
+<tr>
+<td>
+ Actual Text
+</td>
+<td>
+
+<p id="lblclipText"></p>
+</td>
+</tr>
+<tr>
+<td>
+ Delimited by Comma
+</td>
+<td>
+
+<input type="text" id="txtcontent" Readonly="true">
+</td>
+</tr>
+
+
+</Table>
+
+
+
+
+
+
+</body>
+</html>
